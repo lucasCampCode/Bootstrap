@@ -2,10 +2,12 @@
 
 Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& triCount)
 {
+#pragma region normals
 	glm::vec4 forwardNormal = { 0.0f,0.0f,1.0f,0.0f };
 	glm::vec4 rightNormal = { 1.0f,0.0f,0.0f,0.0f };
 	glm::vec4 upNormal = { 0.0f, 1.0f, 0.0f, 0.0f };
-
+#pragma endregion
+#pragma region positions
 	glm::vec4 cornerA = { -1.0f,1.0f,-1.0f,1.0f };
 	glm::vec4 cornerB = { 1.0f,1.0f,1.0f,1.0f };
 	glm::vec4 cornerC = { 1.0f,-1.0f,-1.0f,1.0f };
@@ -14,6 +16,7 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tr
 	glm::vec4 cornerF = { -1.0f,1.0f,1.0f,1.0f };
 	glm::vec4 cornerG = { -1.0f,-1.0f,-1.0f,1.0f };
 	glm::vec4 cornerH = { 1.0f,-1.0f,1.0f,1.0f };
+#pragma endregion
 
 	Vertex* verticies = nullptr;
 	triCount = 12;
@@ -114,6 +117,7 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tr
 	for (int i = 0; i < vertexCount; i += 8) {
 		verticies[i].color = m_color;
 	}
+
 	//setVertexPosition(verticies, vertexCount, 0, { -1.0f,1.0f,-1.0f });//A
 	//setVertexPosition(verticies, vertexCount, 1, { 1.0f,1.0f,1.0f });//B
 	//setVertexPosition(verticies, vertexCount, 2, { 1.0f,-1.0f,-1.0f });//C
