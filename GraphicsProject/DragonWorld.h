@@ -2,6 +2,7 @@
 #include "World.h"
 #include "PlayerCamera.h"
 #include "Light.h"
+#include "Cube.h"
 #include "OBJMesh.h"
 class DragonWorld :
 	public World
@@ -14,5 +15,6 @@ private:
 	PlayerCamera* m_camera = nullptr;
 	Light* m_light = nullptr;
 	OBJMesh* m_dragon = nullptr;
+	Cube* m_cube = nullptr;
 };
 
