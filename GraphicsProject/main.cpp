@@ -1,4 +1,5 @@
 #include "Engine.h"
+#include "TestWorld.h"
 #include "DragonWorld.h"
 
 int main() {

@@ -17,7 +17,7 @@ void DragonWorld::onStart()
 		{1.0f,1.0f,1.0f,1.0f},
 		{1.0f,1.0f,1.0f,1.0f}
 	);
-	m_light->setDirection({ -45.0f,45.0f,0.0f });
+	m_light->setDirection({ -1.0f,-0.5f,-1.0f });
 	add(m_light);
 
 	//dragon
