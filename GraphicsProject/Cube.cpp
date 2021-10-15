@@ -1,4 +1,21 @@
 #include "Cube.h"
+#include "gl_core_4_4.h"
+
+void Cube::onDraw()
+{
+	int program = -1;
+	glGetIntegerv(GL_CURRENT_PROGRAM, &program);
+
+	if (program == -1) {
+		printf("No shader bound!\n");
+		return;
+	}
+	int specularPower = glGetUniformLocation(program, "kSpecularPower");
+	if (specularPower >= 0) {
+		glUniform1f(specularPower, 30);
+	}
+	Mesh::onDraw();
+}
 
 Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount)
 {
