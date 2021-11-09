@@ -1,3 +1,20 @@
+# Graphics Engine
+*requires mouse and keyboards
+## Purpose
+to deminstrate how to set up a graphic engine using console and a wrapper
+
+## how to launch
+1. goto the github release page and downlaod the latest zip
+2. unzip the package and lauch the .exe file
+
+## how to play 
+* WASD - to move around
+* Q - to move up
+* E - to move down
+* Hold right mouse and move to look around
+* ESC - to close application
+
+
 # aieBootstrap
 
 *NOTE: This project is no longer being actively maintained*
