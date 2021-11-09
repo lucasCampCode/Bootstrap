@@ -15,15 +15,15 @@ void DragonWorld::onStart()
 		0,
 		{ 1.0f, 0.0f, 1.0f },
 		{ 0.5f, 0.5f, 0.5f, 1.0f },
-		{ 0.6f, 0.6f, 0.75f, 1.0f },
-		{ 1.0f, 1.0f, 1.0f, 1.0f }
+		{ 0.25f, 0.25f, 0.75f, 1.0f },
+		{ 0.2f, 1.0f, 0.5f, 1.0f }
 	);
 	m_light1->setDirection({ -1.0f,-0.5f,-1.0f });
 	add(m_light1);
 
 	m_light2 = new Light(
 		1,
-		{ -1.0f, 0.0f, -1.0f },
+		{ 0.0f, -0.5f, 0.5f },
 		{ 0.5f, 0.5f, 0.5f, 1.0f },
 		{ 1.0f, 0.0f, 0.0f, 1.0f },
 		{ 1.0f, 0.0f, 0.0f, 1.0f }
@@ -40,7 +40,20 @@ void DragonWorld::onStart()
 
 	m_cube = new Cube();
 	m_cube->setColor({0.5f,0.5f,0.5f,1.0f});
+	m_cube->getTransform()->setPosition({0.0f,0.0f,5.0f});
 	add(m_cube);
+
+	m_map = new TexturePlane("earth_diffuse.jpg", { 0.25f,0.25f,0.25f,1.0f });
+	add(m_map);
+}
+
+void DragonWorld::onUpdate(float deltaTime)
+{
+	float rotationSpeed = 60.0f;
+	rotationSpeed *= deltaTime;
+
+	m_light2->getTransform()->rotate({ 0.0f,rotationSpeed,0.0f });
+	
 }
 
 void DragonWorld::onEnd()
