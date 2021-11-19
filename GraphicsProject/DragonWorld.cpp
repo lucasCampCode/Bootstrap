@@ -10,7 +10,7 @@ void DragonWorld::onStart()
 	setCamera(m_camera);
 	add(m_camera);
 
-	//light
+	//light1
 	m_light1 = new Light(
 		0,
 		{ 1.0f, 0.0f, 1.0f },
@@ -21,6 +21,7 @@ void DragonWorld::onStart()
 	m_light1->setDirection({ -1.0f,-0.5f,-1.0f });
 	add(m_light1);
 
+	//light2
 	m_light2 = new Light(
 		1,
 		{ 0.0f, -0.5f, 0.5f },
@@ -38,11 +39,13 @@ void DragonWorld::onStart()
 	m_dragon->getTransform()->setScale(glm::vec3(0.2f));
 	add(m_dragon);
 
+	//cube
 	m_cube = new Cube();
 	m_cube->setColor({0.5f,0.5f,0.5f,1.0f});
 	m_cube->getTransform()->setPosition({0.0f,0.0f,5.0f});
 	add(m_cube);
 
+	//map
 	m_map = new TexturePlane("earth_diffuse.jpg", { 0.25f,0.25f,0.25f,1.0f });
 	add(m_map);
 }

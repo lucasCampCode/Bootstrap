@@ -14,7 +14,5 @@ private:
 	unsigned int* generateIndices(unsigned int& indexCount) override;
 private:
 	glm::vec4 m_color = glm::vec4(1.0f);
-
-	
 };
 

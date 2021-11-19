@@ -19,15 +19,18 @@ void Light::onDraw()
 		printf("No shader bound!\n");
 		return;
 	}
+
+	//check to see if in bounds
 	if (m_term < 0){
 		printf("term can't be less than 0");
 	return;
-}
+	}
 	if (m_term > 1) {
 		printf("term breached the maximum of shader calculation");
 		return;
 	}
 
+	//edit the binding to the term of the light
 	std::string bound = ("iDirection" + std::to_string(m_term));
 	int lightDirection = glGetUniformLocation(program, bound.c_str());
 	bound = ("iAmbient" + std::to_string(m_term));

@@ -10,6 +10,7 @@ void Cube::onDraw()
 		printf("No shader bound!\n");
 		return;
 	}
+	//manually setting specular power
 	int specularPower = glGetUniformLocation(program, "kSpecularPower");
 	if (specularPower >= 0) {
 		glUniform1f(specularPower, 30);
